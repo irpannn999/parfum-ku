@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParfumKu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Stack+Sans+Headline:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Parfum<span>Ku</span></a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#produk">Produk</a>
+        <a href="#tester">Tester</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"
+          ><i data-feather="shopping-cart"></i
+        ></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search form start -->
+      <div class="search-form">
+        <input
+          type="search-button"
+          id="search-box"
+          placeholder="Search here..."
+        />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- Search form end -->
+
+      <!-- shopping cart start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="Tester/Tester resize.png" alt="tester 1" />
+          <div class="item-detail">
+            <h3>Tester 1</h3>
+            <div class="item-price">IDR 25k</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="Tester/Tester resize.png" alt="tester 1" />
+          <div class="item-detail">
+            <h3>Tester 1</h3>
+            <div class="item-price">IDR 25k</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="Tester/Tester resize.png" alt="tester 1" />
+          <div class="item-detail">
+            <h3>Tester 1</h3>
+            <div class="item-price">IDR 25k</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+      <!-- shopping cart end -->
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Shopping cart start -->
+    <div class="shopping-cart"></div>
+    <!-- Shopping cart end -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Tentukan <span>Parfum</span> Favoritmu!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+          facere.
+        </p>
+        <a href="#" class="cta">Beli Sekarang</a>
+      </main>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About section start -->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="image/itu.jpg" alt="tentang kami" />
+        </div>
+        <div class="content">
+          <h3>Lorem ipsum dolor, sit amet consectetur adipisicing.</h3>
+          <p>
+            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Qui, modi.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+            necessitatibus reprehenderit vero neque fuga doloremque sequi,
+            voluptatum similique animi illum.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- About section end -->
+
+    <!-- Produk Section Start -->
+    <section id="produk" class="produk">
+      <h2><span>Produk</span> kami</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+        itaque possimus laborum aperiam aspernatur vel?Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Ratione, aspernatur.
+      </p>
+
+      <div class="row">
+        <div class="produk-card">
+          <img
+            src="produk/pink ini.jpg"
+            alt="Vanilla"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Vanilla-</h3>
+          <p class="produk-card-harga">IDR. 350.000</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="produk/pink ini.jpg"
+            alt="Vanilla"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Vanilla-</h3>
+          <p class="produk-card-harga">IDR. 350.000</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="produk/pink ini.jpg"
+            alt="Vanilla"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Vanilla-</h3>
+          <p class="produk-card-harga">IDR. 350.000</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="produk/pink ini.jpg"
+            alt="Vanilla"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Vanilla-</h3>
+          <p class="produk-card-harga">IDR. 350.000</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="produk/pink ini.jpg"
+            alt="Vanilla"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Vanilla-</h3>
+          <p class="produk-card-harga">IDR. 350.000</p>
+        </div>
+      </div>
+    </section>
+    <!-- Produk Section End -->
+
+    <!-- Tester section start -->
+    <section class="tester" id="tester">
+      <h2>Tester</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+        ratione esse obcaecati atque quas illo.
+      </p>
+      <div class="row">
+        <div class="tester-card">
+          <div class="tester-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="tester-image">
+            <img src="Tester/Tester resize.png" alt="tester1" />
+          </div>
+          <div class="tester-content">
+            <h3>Cinnamon</h3>
+            <div class="tester-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="tester-price">IDR 25k <span>40k</span></div>
+          </div>
+        </div>
+        <div class="tester-card">
+          <div class="tester-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="tester-image">
+            <img src="Tester/Tester resize.png" alt="tester1" />
+          </div>
+          <div class="tester-content">
+            <h3>Cinnamon</h3>
+            <div class="tester-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="tester-price">IDR 25k <span>40k</span></div>
+          </div>
+        </div>
+        <div class="tester-card">
+          <div class="tester-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="tester-image">
+            <img src="Tester/Tester resize.png" alt="tester1" />
+          </div>
+          <div class="tester-content">
+            <h3>Cinnamon</h3>
+            <div class="tester-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="tester-price">IDR 25k <span>40k</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tester section end -->
+
+    <!-- Contact Start -->
+    <section id="contact" class="contact">
+      <h2><span>Kontak</span> kami</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+        possimus?
+      </p>
+
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.03761317542!2d106.80207945000001!3d-6.28410655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1ec2422b0b3%3A0x39a0d0fe47404d02!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1763106013990!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+
+        <form action="">
+          <div class="input-grup">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="Nama" />
+          </div>
+          <div class="input-grup">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="input-grup">
+            <i data-feather="phone"></i>
+            <input type="text" placeholder="No.hp" />
+          </div>
+          <button type="submit" class="btn">Kirim</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact end -->
+
+    <!-- Footer start -->
+    <footer>
+      <div class="socials">
+        <a href=""><i data-feather="instagram"></i></a>
+        <a href=""><i data-feather="twitter"></i></a>
+        <a href=""><i data-feather="facebook"></i></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#product">Produk</a>
+        <a href="#contact">Kontak Kami</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="">Muhammad Irfan</a>. | &copy;2025.</p>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Modal box item detail start -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="Tester/Tester 1.png" alt="tester 1" />
+          <div class="tester-content">
+            <h3>Tester 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
+              excepturi porro! Quibusdam nemo quia sed quisquam? Molestiae sint
+              nobis aperiam delectus! Distinctio recusandae obcaecati inventore?
+            </p>
+            <div class="tester-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="tester-price">IDR 25k <span>40k</span></div>
+            <a href="#"
+              ><i data-feather="shopping-cart"></i><span>add to cart</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal box item detail end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
