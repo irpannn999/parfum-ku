@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
 
+    
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
@@ -28,7 +29,12 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- App -->
-    <script src="source/App.js"></script>
+    <script src="source/App.js" async></script>
+
+    <!-- tampilan pop up payment methode-->
+     <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="MIDTRANS_DATA_CLIENT_KEY"></script>
   </head>
   <body>
     <!-- Navbar Start -->
@@ -69,18 +75,18 @@
 
       <!-- shopping cart start -->
       <div class="shopping-cart">
-        <template x-for="(item, index) in $store.cart.items" x-keys="index">
+        <template x-for="(item, index) in $store.cart.items" x-key="index">
           <div class="cart-item">
             <img :src="`Tester/${item.img}`" :alt="item.name" />
             <div class="item-detail">
               <h3 x-text="item.name"></h3>
               <div class="item-price">
                 <span x-text="rupiah(item.price)"></span> &times;
-                <button id="remove" @click="$store.cart.remove(item.id)">
+                <button class="remove" @click="$store.cart.remove(item.id)">
                   &minus;
                 </button>
                 <span x-text="item.quantity"></span>
-                <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                <button class="add" @click="$store.cart.add(item)">&plus;</button>
                 &equals;
                 <span x-text="rupiah(item.total)"></span>
               </div>
@@ -95,32 +101,39 @@
         </h4>
 
         <div class="form-container" x-show="$store.cart.items.length">
-          <form action="" id="checkoutForm"></form>
-          <h5>Customer Detail</h5>
+          <form action="" id="checkoutForm">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="($store.cart.total)" />
+            <h5>Customer Detail</h5>
 
-          <label for="name">
-            <span>Name</span>
-            <input type="text" name="name" id="name" />
-          </label>
+            <label for="name">
+              <span>Name</span>
+              <input type="text" name="name" id="name" />
+            </label>
 
-          <label for="email">
-            <span>Email</span>
-            <input type="email" name="email" id="email" />
-          </label>
+            <label for="email">
+              <span>Email</span>
+              <input type="email" name="email" id="email" />
+            </label>
 
-          <label for="phone">
-            <span>Phone</span>
-            <input type="number" name="phone" id="phone" autocomplete="off" />
-          </label>
+            <label for="phone">
+              <span>Phone</span>
+              <input type="number" name="phone" id="phone" autocomplete="off" />
+            </label>
 
-          <button
-            class="checkout-button"
-            type="submit"
-            id="checkout-button"
-            value="checkout"
-          >
-            Checkout
-          </button>
+            <button
+              class="checkout-button disabled"
+              type="submit"
+              id="checkout-button"
+              value="checkout"
+            >
+              Checkout
+            </button>
+          </form>
         </div>
       </div>
       <!-- shopping cart end -->
@@ -128,7 +141,7 @@
     <!-- Navbar end -->
 
     <!-- Shopping cart start -->
-    <div class="shopping-cart"></div>
+    <!-- <div class="shopping-cart"></div> -->
     <!-- Shopping cart end -->
 
     <!-- Hero Section -->
@@ -139,7 +152,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
           facere.
         </p>
-        <a href="#" class="cta">Beli Sekarang</a>
+        <a href="#tester" class="cta">Beli Sekarang</a>
       </main>
     </section>
     <!-- Hero Section End -->
@@ -251,7 +264,7 @@
                   <use href="tester/feather-sprite.svg#shopping-cart" />
                 </svg>
               </a>
-              <a href="#" class="item-detail-button">
+              <a href="#" class="item-detail-button"  @click.prevent="$store.detail.open(item)">
                 <svg
                   width="24"
                   height="24"
@@ -395,15 +408,21 @@
     <!-- Footer end -->
 
     <!-- Modal box item detail start -->
-    <div class="modal" id="item-detail-modal">
-      <div class="modal-container">
-        <a href="#" class="close"><i data-feather="x"></i></a>
-        <div class="modal-content">
-          <img src="Tester/Tester 1.png" alt="tester 1" />
-          <div class="tester-content">
-            <h3>Tester 1</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
+     
+    <div class="modal" id="item-detail-modal" x-data
+  x-show="$store.detail.isOpen"
+  x-cloak
+  @click.self="$store.detail.close()">
+  <div class="modal-container" x-show="$store.detail.selectedItem">
+    <a href="#" class="close"><i data-feather="x"></i></a>
+    <div class="modal-content">
+      <img 
+      :src="`Tester/${$store.detail.selectedItem?.img}`"
+      :alt="$store.detail.selectedItem?.name">
+      <div class="tester-content">
+        <h3 x-text="$store.detail.selectedItem?.name"></h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
               excepturi porro! Quibusdam nemo quia sed quisquam? Molestiae sint
               nobis aperiam delectus! Distinctio recusandae obcaecati inventore?
             </p>
@@ -415,21 +434,23 @@
               <i data-feather="star"></i>
             </div>
             <div class="tester-price">IDR 25k <span>40k</span></div>
-            <a href="#"
-              ><i data-feather="shopping-cart"></i><span>add to cart</span></a
-            >
+            <a href="#" @click.prevent="$store.cart.add(item)"
+            ><i data-feather="shopping-cart"></i><span>add to cart</span></a>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
     <!-- Modal box item detail end -->
 
-    <!-- feather icons -->
-    <script>
-      feather.replace();
-    </script>
+    // <!-- feather icons -->
+
+<script>feather.replace();</script>
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+    
   </body>
+
 </html>

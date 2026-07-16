@@ -41,16 +41,21 @@ document.addEventListener("click", function (e) {
 
 // modal box
 const itemDetailModal = document.querySelector("#item-detail-modal");
-const itemDetailButton = document.querySelector(".item-detail-button");
+const itemDetailButtons = document.querySelectorAll(".item-detail-button");
 
-itemDetailButton.onclick = (e) => {
-  itemDetailModal.style.display = "flex";
-  e.preventDefault();
-};
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".item-detail-button")) {
+      e.preventDefault();
+      itemDetailModal.style.display = "flex";
+    }
+  });
+
+
 
 // klik tombol close modal
 document.querySelector(".modal .close").onclick = (e) => {
-  itemDetailModal.style.display = "none";
+  itemDetailModal.style.display = 'none';
   e.preventDefault();
 };
 
@@ -60,3 +65,5 @@ window.onclick = (e) => {
     itemDetailModal.style.display = "none";
   }
 };
+
+
